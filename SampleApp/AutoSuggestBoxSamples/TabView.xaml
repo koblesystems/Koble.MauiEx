@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage x:Class="SampleApp.AutoSuggestBoxSamples.TabView"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SampleApp.AutoSuggestBoxSamples.TabView"
              xmlns:dm="clr-namespace:MauiEx;assembly=MauiEx"
              xmlns:telerik="clr-namespace:Telerik.Maui.Controls;assembly=Telerik.Maui.Controls"
              Title="TabView">
     <telerik:RadTabView>
         <telerik:TabViewItem HeaderText="First">
-        <Grid VerticalOptions="Start">
-            <dm:AutoSuggestBox x:Name="SuggestBox2"
-                            PlaceholderText="Enter a country"
-                            IsSuggestionListOpen="false"
-                            TextChanged="SuggestBox_TextChanged" />
-        </Grid>
+            <Grid VerticalOptions="Start">
+                <dm:AutoSuggestBox x:Name="SuggestBox2"
+                                   IsSuggestionListOpen="false"
+                                   PlaceholderText="Enter a country"
+                                   TextChanged="SuggestBox_TextChanged" />
+            </Grid>
         </telerik:TabViewItem>
         <telerik:TabViewItem HeaderText="Second">
-        <Grid VerticalOptions="Start">
-            <dm:AutoSuggestBox x:Name="SuggestBox1"
-                           TextChanged="SuggestBox_TextChanged" />
-        </Grid>
+            <Grid x:Name="uiGrid2" VerticalOptions="Start">
+                <Button Clicked="Button_Clicked" Text="Add suggest box" />
+                <!--<dm:AutoSuggestBox x:Name="SuggestBox1" TextChanged="SuggestBox_TextChanged" />-->
+            </Grid>
         </telerik:TabViewItem>
         <telerik:TabViewItem HeaderText="Third" />
     </telerik:RadTabView>
