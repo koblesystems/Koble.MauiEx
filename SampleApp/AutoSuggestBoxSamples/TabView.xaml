@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleApp.AutoSuggestBoxSamples.TabView"
+             xmlns:dm="clr-namespace:MauiEx;assembly=MauiEx"
+             xmlns:telerik="clr-namespace:Telerik.Maui.Controls;assembly=Telerik.Maui.Controls"
+             Title="TabView">
+    <telerik:RadTabView>
+        <telerik:TabViewItem HeaderText="First" />
+        <telerik:TabViewItem HeaderText="Second">
+            <dm:AutoSuggestBox x:Name="SuggestBox1" 
+                           PlaceholderText="Enter a country"
+                           TextChanged="SuggestBox_TextChanged" />
+        </telerik:TabViewItem>
+        <telerik:TabViewItem HeaderText="Third" />
+    </telerik:RadTabView>
+</ContentPage>

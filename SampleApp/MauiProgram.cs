@@ -1,4 +1,6 @@
 ﻿using Microsoft.Maui.LifecycleEvents;
+using Telerik.Maui.Controls;
+using Telerik.Maui.Controls.Compatibility;
 
 namespace SampleApp;
 
@@ -29,7 +31,9 @@ public static class MauiProgram
                 });
             })
 #endif
-          .UseMauiEx();
+          .UseMauiEx()
+          .UseTelerikControls()
+          .UseTelerik();
         return builder.Build();
     }
 }
