@@ -6,7 +6,11 @@
              xmlns:telerik="clr-namespace:Telerik.Maui.Controls;assembly=Telerik.Maui.Controls"
              Title="TabView">
     <telerik:RadTabView>
-        <telerik:TabViewItem HeaderText="First" />
+        <telerik:TabViewItem HeaderText="First">
+            <dm:AutoSuggestBox x:Name="SuggestBox2" 
+                            PlaceholderText="Enter a country"
+                            TextChanged="SuggestBox2_TextChanged" />
+        </telerik:TabViewItem>
         <telerik:TabViewItem HeaderText="Second">
             <dm:AutoSuggestBox x:Name="SuggestBox1" 
                            PlaceholderText="Enter a country"
