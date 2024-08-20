@@ -196,10 +196,11 @@ namespace MauiEx.Platform.iOS
                     return;
                 if (viewController.PresentedViewController != null)
                     viewController = viewController.PresentedViewController;
-                if (SelectionList.Superview == null)
-                {
-                    viewController.Add(SelectionList);
-                }
+                //TODO
+                // if (SelectionList.Superview == null)
+                // {
+                //     viewController.Add(SelectionList);
+                // }
                 SelectionList.TopAnchor.ConstraintEqualTo(InputTextField.BottomAnchor).Active = true;
                 SelectionList.LeftAnchor.ConstraintEqualTo(InputTextField.LeftAnchor).Active = true;
                 SelectionList.WidthAnchor.ConstraintEqualTo(InputTextField.WidthAnchor).Active = true;
@@ -209,8 +210,9 @@ namespace MauiEx.Platform.iOS
             }
             else
             {
-                if (SelectionList.Superview != null)
-                    SelectionList.RemoveFromSuperview();
+                //TODO
+                // if (SelectionList.Superview != null)
+                //     SelectionList.RemoveFromSuperview();
             }
         }
 
