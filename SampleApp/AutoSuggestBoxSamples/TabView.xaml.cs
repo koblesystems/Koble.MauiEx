@@ -13,30 +13,25 @@ public partial class TabView : ContentPage
 	}
 
     List<string> countries;
-    List<string> countries2;
 	void Initialize()
     {
         using (var s = typeof(TabView).Assembly.GetManifestResourceStream("SampleApp.Data.Countries.txt"))
-        {
             countries = new StreamReader(s).ReadToEnd().Split('\n').Select(t => t.Trim()).ToList();
-            countries2 = new StreamReader(s).ReadToEnd().Split('\n').Select(t => t.Trim()).ToList();
-        }
-        SuggestBox1.ItemsSource = countries;
-        SuggestBox2.ItemsSource = countries2;
+
+         SuggestBox1.ItemsSource = countries;
+        SuggestBox2.ItemsSource = countries;
     }
 
 	void SuggestBox_TextChanged(object sender, AutoSuggestBoxTextChangedEventArgs e)
     {
         AutoSuggestBox box = (AutoSuggestBox)sender;
         // Filter the list based on text input
-        box.ItemsSource = GetSuggestions(box.Text);
-    }
+        
+        var suggestions = GetSuggestions(box.Text);
+        if(suggestions.Count > 0)
+            box.IsSuggestionListOpen = true;
 
-	void SuggestBox2_TextChanged(object sender, AutoSuggestBoxTextChangedEventArgs e)
-    {
-        AutoSuggestBox box = (AutoSuggestBox)sender;
-        // Filter the list based on text input
-        box.ItemsSource = GetSuggestions(box.Text);
+        box.ItemsSource = suggestions;
     }
 
     List<string> GetSuggestions(string text)

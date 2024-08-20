@@ -7,14 +7,18 @@
              Title="TabView">
     <telerik:RadTabView>
         <telerik:TabViewItem HeaderText="First">
-            <dm:AutoSuggestBox x:Name="SuggestBox2" 
+        <Grid VerticalOptions="Start">
+            <dm:AutoSuggestBox x:Name="SuggestBox2"
                             PlaceholderText="Enter a country"
-                            TextChanged="SuggestBox2_TextChanged" />
+                            IsSuggestionListOpen="false"
+                            TextChanged="SuggestBox_TextChanged" />
+        </Grid>
         </telerik:TabViewItem>
         <telerik:TabViewItem HeaderText="Second">
-            <dm:AutoSuggestBox x:Name="SuggestBox1" 
-                           PlaceholderText="Enter a country"
+        <Grid VerticalOptions="Start">
+            <dm:AutoSuggestBox x:Name="SuggestBox1"
                            TextChanged="SuggestBox_TextChanged" />
+        </Grid>
         </telerik:TabViewItem>
         <telerik:TabViewItem HeaderText="Third" />
     </telerik:RadTabView>
